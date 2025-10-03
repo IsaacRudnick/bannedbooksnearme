@@ -1,0 +1,4 @@
+./combined_books.csv
+# Cached requests from python requests-cache
+*.sqlite 
+notes.md
