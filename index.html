@@ -14,31 +14,15 @@
 				transform: translateY(-4px);
 				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 			}
-			#suggestions {
-				max-height: 200px;
-				overflow-y: auto;
-				z-index: 1000;
-				width: 200px;
-			}
 		</style>
 	</head>
-	<body class="bg-light">
+	<body class="bg-white">
 		<div class="container py-4">
 			<h1 class="text-center mb-4">Banned Books Lookup</h1>
-			<form id="search-form" autocomplete="off" class="text-center mb-4">
-				<div class="input-group justify-content-center">
-					<input
-						type="text"
-						name="state"
-						id="state-input"
-						class="form-control w-auto"
-						placeholder="Enter state abbreviation (e.g., CA)"
-						required
-					/>
-					<button type="submit" class="btn btn-primary">Search</button>
-				</div>
-				<div id="suggestions" class="list-group position-absolute"></div>
-			</form>
+			<div class="text-center mb-4">
+				<p class="mb-3">Click on a state to see banned books in that area:</p>
+				<div id="map" style="max-width: 800px; margin: 0 auto"></div>
+			</div>
 
 			<div id="results-container" class="d-none">
 				<h2 id="results-title" class="mb-3"></h2>
@@ -53,6 +37,9 @@
 		<div id="modals-container"></div>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="public/mapdata.js"></script>
+		<script type="text/javascript" src="public/usmap.js"></script>
+		<script type="text/javascript" src="public/select.js"></script>
 		<script>
 			const PAGE_SIZE = 12;
 			let allBooks = [];
@@ -60,97 +47,46 @@
 			let currentIndex = 0;
 			let currentState = "";
 
-			// --- State autocomplete ---
-			const states = [
-				"AL",
-				"AK",
-				"AZ",
-				"AR",
-				"CA",
-				"CO",
-				"CT",
-				"DE",
-				"FL",
-				"GA",
-				"HI",
-				"ID",
-				"IL",
-				"IN",
-				"IA",
-				"KS",
-				"KY",
-				"LA",
-				"ME",
-				"MD",
-				"MA",
-				"MI",
-				"MN",
-				"MS",
-				"MO",
-				"MT",
-				"NE",
-				"NV",
-				"NH",
-				"NJ",
-				"NM",
-				"NY",
-				"NC",
-				"ND",
-				"OH",
-				"OK",
-				"OR",
-				"PA",
-				"RI",
-				"SC",
-				"SD",
-				"TN",
-				"TX",
-				"UT",
-				"VT",
-				"VA",
-				"WA",
-				"WV",
-				"WI",
-				"WY",
-			];
-			const input = document.getElementById("state-input");
-			const suggestionsContainer = document.getElementById("suggestions");
+			// Initialize the map
+			simplemaps_select.map = simplemaps_usmap; // tells the script which map to work with
+			simplemaps_select.selected_color = "#007bff"; // Bootstrap primary blue
+			simplemaps_select.max = 1;
 
-			input.addEventListener("input", () => {
-				const query = input.value.toLowerCase();
-				suggestionsContainer.innerHTML = "";
-				if (!query) return;
-				const matches = states.filter((state) => state.toLowerCase().includes(query));
-				matches.forEach((match) => {
-					const div = document.createElement("button");
-					div.type = "button";
-					div.className = "list-group-item list-group-item-action";
-					div.innerText = match;
-					div.onclick = () => {
-						input.value = match;
-						suggestionsContainer.innerHTML = "";
-					};
-					suggestionsContainer.appendChild(div);
-				});
-			});
-			document.addEventListener("click", (e) => {
-				if (e.target !== input) suggestionsContainer.innerHTML = "";
-			});
+			// Set up the click hook function
+			simplemaps_usmap.hooks.click_state = function (id) {
+				// This function is called when a state is clicked
+				handleStateSelection(id);
+			};
 
 			// --- Load JSON once ---
 			async function loadAllBooks() {
 				if (allBooks.length === 0) {
 					const response = await fetch("books.json");
-					allBooks = await response.json();
+					const rawBooks = await response.json();
+
+					// Remove duplicate books based on title only
+					const seen = new Set();
+					allBooks = rawBooks.filter((book) => {
+						// Create a unique key using only the title
+						const key = (book.title || "").toLowerCase().trim();
+
+						if (seen.has(key)) {
+							return false; // Skip duplicate
+						}
+
+						seen.add(key);
+						return true; // Keep this book
+					});
+
+					console.log(`Loaded ${rawBooks.length} books, kept ${allBooks.length} after removing duplicates`);
 				}
 			}
 
-			// --- Handle form submit ---
-			document.getElementById("search-form").addEventListener("submit", async (e) => {
-				e.preventDefault();
+			// --- Handle state selection from map ---
+			async function handleStateSelection(state_id) {
 				await loadAllBooks();
 
-				currentState = input.value.trim().toLowerCase();
+				currentState = state_id.toLowerCase();
 				booksData = allBooks.filter((b) => b.state.trim().toLowerCase() === currentState);
 
 				currentIndex = 0;
@@ -167,7 +103,7 @@
 					resultsTitle.textContent = `No banned books found for ${currentState.toUpperCase()}`;
 					document.getElementById("load-more").style.display = "none";
 				}
-			});
+			}
 
 			// --- Render next page of books ---
 			function renderBooks() {
@@ -201,6 +137,13 @@
 					modal.className = "modal fade";
 					modal.id = `modal-${idx}`;
 					modal.tabIndex = -1;
+
+					// Check if book can be borrowed online
+					const canBorrowOnline = book.availability === "Can be borrowed online";
+					const linkUrl = canBorrowOnline ? `https://openlibrary.org${book.openLibraryKey}` : book.worldcat;
+					const linkText = canBorrowOnline ? "Borrow Online" : "Find in WorldCat";
+					const linkClass = canBorrowOnline ? "btn btn-success" : "btn btn-outline-primary";
+
 					modal.innerHTML = `
 						<div class="modal-dialog">
 							<div class="modal-content">
@@ -213,7 +156,7 @@
 									<p><strong>Source:</strong> ${book.source}</p>
 									<p><strong>District:</strong> ${book.district}</p>
 									<p><strong>Availability:</strong> ${book.availability}</p>
-									<p><a href="${book.worldcat}" target="_blank" class="btn btn-outline-primary">Find in WorldCat</a></p>
+									<p><a href="${linkUrl}" target="_blank" class="${linkClass}">${linkText}</a></p>
 								</div>
 							</div>
 						</div>

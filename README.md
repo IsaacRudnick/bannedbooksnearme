@@ -8,6 +8,8 @@ The data is combined into a standardized format, each book is looked up on Open 
 
 The license for the project is NOT a license to the data itself, which is owned by PEN America, Dr. Magnusson, Open Library, and WorldCat. The data provided here are simply a centralized collection of these datasets for the specific purpose of serving this website.
 
+Also, the state selector is based on the [simplemaps HTML5 Map](https://simplemaps.com/docs/selectable-states#usmap) which I am using under their MIT license.
+
 ## Process to get JSON
 
 ```bash
