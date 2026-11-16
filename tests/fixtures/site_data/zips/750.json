@@ -1,0 +1,11 @@
+{
+  "75001": {
+    "states": ["TX"],
+    "districts": [{"leaid": "4816230", "name": "Carrollton-Farmers Branch ISD", "state": "TX"}],
+    "libraries": [
+      {"name": "Addison Public Library", "address": "4700 Belt Line Rd", "city": "Addison", "state": "TX", "zip": "75001", "miles": 0.8},
+      {"name": "Fixture Library Two", "address": "1 Main St", "city": "Dallas", "state": "TX", "zip": "75201", "miles": 4.2},
+      {"name": "Fixture Library Three", "address": "2 Oak Ave", "city": "Plano", "state": "TX", "zip": "75024", "miles": 6.9}
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+id,name,address,city,state,zip,lat,lon,type
+TX0041-002,Farmers Branch Manske Public Library,13613 Webb Chapel Rd,Farmers Branch,TX,75234,32.93331,-96.87327,CE
+TX0003-028,Timberglen Branch Library,18505 Midway Rd,Dallas,TX,75287,33.00364,-96.84385,BR
+TX0003-007,Fretz Park Branch Library,6990 Belt Line Rd,Dallas,TX,75254,32.94991,-96.78326,BR
+TX0421-002,Carrollton Public Library,1700 Keller Springs Rd,Carrollton,TX,75006,32.97116,-96.89423,CE
+TX0003-019,Renner Frankford Branch Library,6400 Frankford Rd,Dallas,TX,75252,32.99797,-96.79444,BR
+TX0003-015,Park Forest Branch Library,3421 Forest Ln,Dallas,TX,75234,32.90971,-96.86349,BR
+UT0048-002,Salt Lake City Public Library Main Library,210 East 400 South,Salt Lake City,UT,84111,40.76052,-111.88492,CE
+UT0048-005,Salt Lake City Public Library Chapman Branch,577 South 900 West,Salt Lake City,UT,84104,40.75666,-111.91681,BR
+UT0048-009,Salt Lake City Public Library Marmalade Branch,280 West 500 North,Salt Lake City,UT,84103,40.78024,-111.89909,BR
+UT0048-008,Salt Lake City Public Library Glendale Branch,1375 South Concord,Salt Lake City,UT,84104,40.73900,-111.92703,BR
+UT0048-004,Salt Lake City Public Library Corinne and Jack Sweet Branch,455 F Street,Salt Lake City,UT,84103,40.77999,-111.87608,BR
+UT0048-007,Salt Lake City Public Library Sprague Branch,2131 South 1100 East,Salt Lake City,UT,84106,40.72546,-111.85957,BR
+TX0702-001,Garwood Memorial Library,512 Arthur St,Garwood,TX,77442,29.44860,-96.39529,CE
+TX0716-001,Sheridan Memorial Library,5805 S Logan Park Dr,Sheridan,TX,77475,29.49398,-96.67221,CE
+TX0023-002,Eula & David Wintermann Library,101 N Walnut Ave,Eagle Lake,TX,77434,29.58997,-96.33538,CE
+TX0439-002,Nesbitt Memorial Library,529 Washington St,Columbus,TX,78934,29.70425,-96.54146,CE
+TX0326-004,El Campo Branch Library,200 W Church St,El Campo,TX,77437,29.20042,-96.27518,BR
+TX0326-005,Louise Branch Library,803 Third St,Louise,TX,77455,29.10866,-96.40993,BR
+TX0029-002,Jackson County Memorial Library,411 N Wells St Ste 121,Edna,TX,77957,28.98087,-96.64803,CE
+TX0210-003,Blessing Library,124 9th St,Blessing,TX,77419,28.86997,-96.22261,BR
+TX0326-002,Wharton County Library,1920 N Fulton St,Wharton,TX,77488,29.32853,-96.09312,CE

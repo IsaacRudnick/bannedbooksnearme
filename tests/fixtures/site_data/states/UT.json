@@ -1,0 +1,17 @@
+{
+  "state": "UT",
+  "name": "Utah",
+  "books": {
+    "OL1000001W": {"title": "Statewide Book A", "authors": ["Ann Author"], "ol": "OL1000001W", "isbn": "9780000000011", "cover": "tests/fixtures/site_data/covers/ok.svg", "scan": true},
+    "OL1000002W": {"title": "Statewide Book B", "authors": ["Bob Writer", "Cy Coauthor"], "ol": "OL1000002W", "isbn": null, "cover": null, "scan": false},
+    "x0a1b2c3d4e": {"title": "Alpine Only Book", "authors": ["Doe, Jane"], "ol": null, "isbn": null, "cover": null, "scan": false}
+  },
+  "districts": {
+    "4900001": {"name": "Alpine School District", "leaid": "4900001"}
+  },
+  "bans": [
+    {"book": "OL1000001W", "district": null, "year": "2023-24", "status": "banned", "scope": "statewide", "sources": [{"id": "utah_state"}]},
+    {"book": "OL1000002W", "district": null, "year": "2024-25", "status": "restricted", "scope": "statewide", "sources": [{"id": "utah_state", "url": "https://example.org/utah-state-list/book-b"}]},
+    {"book": "x0a1b2c3d4e", "district": "4900001", "year": "2023-24", "status": "banned_pending_investigation", "scope": "district", "sources": [{"id": "pen_2023-24"}]}
+  ]
+}

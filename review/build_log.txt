@@ -1,0 +1,115 @@
+Loaded  10046 ban records from pen_2023-24
+Loaded    444 ban records from fldoe_2024-25
+Loaded  12406 ban records from magnusson
+district match: 423/453 unique names (93.4%), 22600/22828 ban records (99.0%)
+source       fldoe_2024-25                  records    444  events    444
+source       magnusson                      records  12368  events  12267
+source       pen_2023-24                    records  10046  events   9982
+state        AK                             records    114  events    108
+state        AR                             records     14  events     14
+state        AZ                             records      3  events      3
+state        CA                             records      5  events      3
+state        CO                             records     24  events     24
+state        FL                             records  10058  events   6547
+state        GA                             records    168  events    133
+state        IA                             records   6252  events   3848
+state        ID                             records     49  events     38
+state        IL                             records      9  events      8
+state        IN                             records     19  events     18
+state        KS                             records      9  events      9
+state        KY                             records    103  events    100
+state        LA                             records      2  events      1
+state        MA                             records      1  events      1
+state        MD                             records    122  events     78
+state        ME                             records    101  events    100
+state        MI                             records     33  events     33
+state        MN                             records     11  events     10
+state        MO                             records    222  events    185
+state        MS                             records     22  events     22
+state        MT                             records     10  events     10
+state        NC                             records    173  events    119
+state        ND                             records     14  events     14
+state        NE                             records      1  events      1
+state        NH                             records      1  events      1
+state        NJ                             records     11  events     10
+state        NY                             records     17  events     12
+state        OH                             records      9  events      7
+state        OK                             records     32  events     32
+state        OR                             records     41  events     41
+state        PA                             records    140  events    111
+state        RI                             records      1  events      1
+state        SC                             records    160  events    151
+state        TN                             records   1831  events   1783
+state        TX                             records   1355  events   1002
+state        UT                             records    382  events    350
+state        VA                             records    449  events    347
+state        VT                             records      1  events      1
+state        WA                             records      4  events      4
+state        WI                             records    805  events    429
+state        WY                             records     80  events     59
+school_year  (none)                         records    155  events    140
+school_year  2020-21                        records     27  events     27
+school_year  2021-22                        records    657  events    656
+school_year  2022-23                        records   1245  events   1219
+school_year  2023-24                        records  17356  events  10628
+school_year  2024-25                        records   3017  events   2699
+school_year  2025-26                        records    401  events    399
+loader   districts_none_removed                             57
+loader   districts_with_removals                            16
+loader   dropped_decision                                   7974
+loader   dropped_decision_value:"Lost"                      4
+loader   dropped_decision_value:(blank)                     1265
+loader   dropped_decision_value:02/12/2024                  1
+loader   dropped_decision_value:N/A                         134
+loader   dropped_decision_value:No Action                   85
+loader   dropped_decision_value:Reshelved                   1258
+loader   dropped_decision_value:Retained                    1259
+loader   dropped_decision_value:Returned                    732
+loader   dropped_decision_value:Still in Process            505
+loader   dropped_decision_value:The Absolutely True Diary of a Part-Time Indian 1
+loader   dropped_decision_value:Unclear                     2
+loader   dropped_decision_value:Unknown                     2465
+loader   dropped_decision_value:Weeded                      3
+loader   dropped_decision_value:Weeded/Deselected           215
+loader   dropped_decision_value:Weeded/Deselectednned       44
+loader   dropped_decision_value:Withdrawn                   1
+loader   dropped_empty_title                                1
+loader   dropped_library_type:(blank)                       73
+loader   dropped_library_type:College/University            381
+loader   dropped_library_type:Public                        1568
+loader   dropped_library_type:v                             1
+loader   dropped_unknown_state:(blank)                      10
+loader   dropped_unknown_state:US                           607
+loader   duplicates_in_source:magnusson                     37
+loader   kept:banned                                        7390
+loader   kept:banned_pending_investigation                  3298
+loader   kept:restricted                                    1718
+loader   kept_decision:Banned                               7
+loader   kept_decision:Banned From Library                  2
+loader   kept_decision:Banned/Do Not Order                  56
+loader   kept_decision:Banned/Removed                       7275
+loader   kept_decision:Banned/RemovedBanned/Removed         1
+loader   kept_decision:Challenged - Removed While Under Review 1
+loader   kept_decision:Removed                              38
+loader   kept_decision:Removed - Curriculum                 11
+loader   kept_decision:Retained Restricted                  483
+loader   kept_decision:Retained/Restricted                  1235
+loader   kept_decision:Still in Process                     3295
+loader   kept_decision:Still in ProcessStill in Process     2
+loader   kept_statewide                                     30
+loader   records_loaded:fldoe_2024-25                       444
+loader   records_loaded:magnusson                           12406
+loader   records_loaded:pen_2023-24                         10046
+loader   retained_with_restrictions_yes (not included)      33
+summary  ban_records_after_dedupe                           22858
+summary  ban_events                                         15768
+summary  records_merged_into_other_events                   7090
+summary  book_keys_total                                    5706
+summary  book_keys_high_confidence                          5140
+summary  book_match_rate_by_key                             90.1%
+summary  book_match_rate_by_record                          95.2%
+summary  district_names_total                               453
+summary  district_names_matched                             423
+summary  district_match_rate_by_name                        93.4%
+summary  district_match_rate_by_record                      99.0%
+896 ZIP files, 19.91 MB total, largest 604.json (71 KB)

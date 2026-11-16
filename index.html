@@ -3,174 +3,110 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Banned Books Lookup</title>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-		<style>
-			.book-card img {
-				height: 280px;
-				object-fit: cover;
-			}
-			.book-card:hover {
-				transform: translateY(-4px);
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-			}
-		</style>
+		<meta name="color-scheme" content="light dark" />
+		<title>Banned Books Near Me</title>
+		<meta name="description" content="Find out which books schools have banned near your ZIP code or in your state." />
+		<!-- An empty icon stops the browser from asking for /favicon.ico, which does not exist. -->
+		<link rel="icon" href="data:," />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+		<link href="public/app.css" rel="stylesheet" />
 	</head>
-	<body class="bg-white">
-		<div class="container py-4">
-			<h1 class="text-center mb-4">Banned Books Lookup</h1>
-			<div class="text-center mb-4">
-				<p class="mb-3">Click on a state to see banned books in that area:</p>
-				<div id="map" style="max-width: 800px; margin: 0 auto"></div>
+	<body>
+		<a class="skip-link" href="#main" data-jump="main">Skip to main content</a>
+
+		<header class="masthead">
+			<div class="wrap masthead-inner">
+				<a class="brand" href="./" id="brand-link">Banned Books Near Me</a>
+				<span class="masthead-note">School book bans, by ZIP code and state</span>
+			</div>
+		</header>
+
+		<!-- One place for page-level warnings. Loading and error states for a view live inside #results. -->
+		<div class="wrap"><div id="message" class="notice notice-warn" role="status" hidden></div></div>
+
+		<main id="main" class="wrap" tabindex="-1">
+			<!-- LANDING VIEW: shown when the URL has no route. -->
+			<div id="landing">
+				<section class="hero" aria-labelledby="hero-title">
+					<p class="kicker">A lookup of school book bans</p>
+					<h1 id="hero-title" class="hero-title">Which books have schools banned near you?</h1>
+					<form id="zip-form" class="zip-form js-zip-form" novalidate>
+						<label for="zip-input" class="zip-label">Enter your ZIP code</label>
+						<div class="zip-row">
+							<input id="zip-input" name="zip" class="zip-input" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="postal-code" maxlength="5" placeholder="ZIP code" aria-describedby="zip-error" />
+							<button type="submit" class="btn btn-primary btn-large">Find banned books</button>
+						</div>
+						<p id="zip-error" class="field-error" role="alert"></p>
+					</form>
+				</section>
+
+				<section class="stats" id="national-stats" aria-label="Totals for all states" hidden>
+					<div class="stat"><span class="stat-num" id="stat-events"></span><span class="stat-label">ban events</span></div>
+					<div class="stat"><span class="stat-num" id="stat-books"></span><span class="stat-label" id="stat-books-label">books</span></div>
+					<div class="stat"><span class="stat-num" id="stat-states"></span><span class="stat-label">states with recorded bans</span></div>
+				</section>
+
+				<section class="pick" aria-labelledby="pick-title">
+					<h2 id="pick-title" class="section-title">Or pick a state</h2>
+					<div class="pick-row">
+						<label for="state-select" class="pick-label">Choose a state from the list</label>
+						<select id="state-select" class="select js-state-select"></select>
+						<a class="skip-map" href="#after-map" data-jump="after-map">Skip the map</a>
+					</div>
+
+					<div class="map-card">
+						<div class="map-wrap">
+							<div id="map" role="group" aria-label="Map of the United States. Each state is shaded by its number of recorded ban events."></div>
+							<div id="map-tip" class="map-tip" role="status" aria-live="polite" hidden></div>
+						</div>
+						<div class="legend" id="map-legend" aria-label="Map legend"></div>
+						<p class="map-caveat">Shading shows how many ban events the sources recorded. A state with a low count may have less reporting, not fewer bans.</p>
+					</div>
+					<span id="after-map" tabindex="-1"></span>
+				</section>
 			</div>
 
-			<div id="results-container" class="d-none">
-				<h2 id="results-title" class="mb-3"></h2>
-				<div id="book-grid" class="row g-4"></div>
-				<div class="text-center mt-3">
-					<button id="load-more" class="btn btn-secondary">Load More</button>
-				</div>
+			<!-- RESULTS VIEW: shown for #zip=NNNNN and #state=XX. -->
+			<div id="results" hidden>
+				<div id="results-search" class="results-search"></div>
+				<div id="results-body" aria-live="polite" aria-busy="false"></div>
 			</div>
-		</div>
 
-		<!-- Placeholder for modals -->
-		<div id="modals-container"></div>
+			<!-- Books Unbanned. Always visible. -->
+			<section id="unbanned" class="block" aria-labelledby="unbanned-title" tabindex="-1">
+				<div class="block-head"><h2 id="unbanned-title">Books Unbanned</h2></div>
+				<p class="lede">Some libraries give out free digital library cards to teens who live where books are banned. Each program sets its own rules. This is what each library says.</p>
+				<div id="unbanned-list" class="program-grid"></div>
+				<p id="unbanned-checked" class="muted small"></p>
+			</section>
+		</main>
 
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<footer class="footer">
+			<div class="wrap">
+				<section id="about" class="block" aria-labelledby="about-title" tabindex="-1">
+					<h2 id="about-title" class="section-title">About the data</h2>
+					<p class="lede">A ban here means a school district or a state removed a book from school libraries or classrooms, or limited who may read it, as one of the sources below reports.</p>
+					<ul id="about-sources" class="source-list"></ul>
+					<p id="about-generated" class="muted small"></p>
+					<p class="muted small">
+						Book covers and links come from <a href="https://openlibrary.org" rel="noopener" target="_blank">Open Library</a>. Library data comes from the Institute of Museum and Library Services. School district data comes from the National Center for Education Statistics.
+					</p>
+				</section>
+			</div>
+		</footer>
+
+		<!-- One shared dialog. app.js fills it when a book card is clicked. -->
+		<dialog id="book-dialog" class="dialog" aria-labelledby="book-dialog-title">
+			<div class="dialog-inner">
+				<button type="button" class="dialog-close" id="book-dialog-close" aria-label="Close book details">Close <span aria-hidden="true">&times;</span></button>
+				<div id="book-dialog-body"></div>
+			</div>
+		</dialog>
+
 		<script type="text/javascript" src="public/mapdata.js"></script>
 		<script type="text/javascript" src="public/usmap.js"></script>
-		<script type="text/javascript" src="public/select.js"></script>
-		<script>
-			const PAGE_SIZE = 12;
-			let allBooks = [];
-			let booksData = [];
-			let currentIndex = 0;
-			let currentState = "";
-
-			// Initialize the map
-			simplemaps_select.map = simplemaps_usmap; // tells the script which map to work with
-			simplemaps_select.selected_color = "#007bff"; // Bootstrap primary blue
-			simplemaps_select.max = 1;
-
-			// Set up the click hook function
-			simplemaps_usmap.hooks.click_state = function (id) {
-				// This function is called when a state is clicked
-				handleStateSelection(id);
-			};
-
-			// --- Load JSON once ---
-			async function loadAllBooks() {
-				if (allBooks.length === 0) {
-					const response = await fetch("books.json");
-					const rawBooks = await response.json();
-
-					// Remove duplicate books based on title only
-					const seen = new Set();
-					allBooks = rawBooks.filter((book) => {
-						// Create a unique key using only the title
-						const key = (book.title || "").toLowerCase().trim();
-
-						if (seen.has(key)) {
-							return false; // Skip duplicate
-						}
-
-						seen.add(key);
-						return true; // Keep this book
-					});
-
-					console.log(`Loaded ${rawBooks.length} books, kept ${allBooks.length} after removing duplicates`);
-				}
-			}
-
-			// --- Handle state selection from map ---
-			async function handleStateSelection(state_id) {
-				await loadAllBooks();
-
-				currentState = state_id.toLowerCase();
-				booksData = allBooks.filter((b) => b.state.trim().toLowerCase() === currentState);
-
-				currentIndex = 0;
-				document.getElementById("book-grid").innerHTML = "";
-				document.getElementById("modals-container").innerHTML = "";
-				document.getElementById("results-container").classList.remove("d-none");
-
-				const resultsTitle = document.getElementById("results-title");
-				if (booksData.length) {
-					resultsTitle.textContent = `Results for ${currentState.toUpperCase()}`;
-					renderBooks();
-					document.getElementById("load-more").style.display = "block";
-				} else {
-					resultsTitle.textContent = `No banned books found for ${currentState.toUpperCase()}`;
-					document.getElementById("load-more").style.display = "none";
-				}
-			}
-
-			// --- Render next page of books ---
-			function renderBooks() {
-				const slice = booksData.slice(currentIndex, currentIndex + PAGE_SIZE);
-				const grid = document.getElementById("book-grid");
-				const modals = document.getElementById("modals-container");
-
-				slice.forEach((book, i) => {
-					const idx = currentIndex + i + 1;
-
-					// Card
-					const card = document.createElement("div");
-					card.className = "col-md-3";
-					card.innerHTML = `
-						<div class="card book-card h-100" role="button" data-bs-toggle="modal" data-bs-target="#modal-${idx}">
-							${
-								book.cover_url
-									? `<img src="${book.cover_url}" class="card-img-top" alt="Cover of ${book.title}" onerror="this.style.display='none'">`
-									: ""
-							}
-							<div class="card-body">
-								<h6 class="card-title">${book.title}</h6>
-								<p class="card-text text-muted">${book.author || ""}</p>
-							</div>
-						</div>
-					`;
-					grid.appendChild(card);
-
-					// Modal
-					const modal = document.createElement("div");
-					modal.className = "modal fade";
-					modal.id = `modal-${idx}`;
-					modal.tabIndex = -1;
-
-					// Check if book can be borrowed online
-					const canBorrowOnline = book.availability === "Can be borrowed online";
-					const linkUrl = canBorrowOnline ? `https://openlibrary.org${book.openLibraryKey}` : book.worldcat;
-					const linkText = canBorrowOnline ? "Borrow Online" : "Find in WorldCat";
-					const linkClass = canBorrowOnline ? "btn btn-success" : "btn btn-outline-primary";
-
-					modal.innerHTML = `
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title">${book.title}</h5>
-									<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-								</div>
-								<div class="modal-body">
-									<p><em>by ${book.author}</em></p>
-									<p><strong>Source:</strong> ${book.source}</p>
-									<p><strong>District:</strong> ${book.district}</p>
-									<p><strong>Availability:</strong> ${book.availability}</p>
-									<p><a href="${linkUrl}" target="_blank" class="${linkClass}">${linkText}</a></p>
-								</div>
-							</div>
-						</div>
-					`;
-					modals.appendChild(modal);
-				});
-
-				currentIndex += PAGE_SIZE;
-				if (currentIndex >= booksData.length) {
-					document.getElementById("load-more").style.display = "none";
-				}
-			}
-
-			document.getElementById("load-more").addEventListener("click", renderBooks);
-		</script>
+		<script src="public/app.js"></script>
 	</body>
 </html>

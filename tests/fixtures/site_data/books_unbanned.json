@@ -1,0 +1,7 @@
+{
+  "checked": "2026-11-15",
+  "programs": [
+    {"library": "Example Public Library", "url": "https://example.org/unbanned", "eligibility": "Fixture text: this is where the page quotes the program's own eligibility words."},
+    {"library": "Sample County Library", "url": "https://example.org/sample-county", "eligibility": "Fixture text: a second program with its own eligibility rules."}
+  ]
+}
