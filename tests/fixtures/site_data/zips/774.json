@@ -1,0 +1,14 @@
+{
+  "77494": {
+    "states": ["TX"],
+    "districts": [
+      {"leaid": "4823640", "name": "Katy ISD", "state": "TX"},
+      {"leaid": "4820730", "name": "Fort Bend ISD", "state": "TX"}
+    ],
+    "libraries": [
+      {"name": "Katy Fixture Library", "address": "5414 Franz Rd", "city": "Katy", "state": "TX", "zip": "77493", "miles": 1.1},
+      {"name": "Cinco Fixture Library", "address": "2 Cinco Way", "city": "Katy", "state": "TX", "zip": "77494", "miles": 2.0},
+      {"name": "Fulshear Fixture Library", "address": "3 Bridge St", "city": "Fulshear", "state": "TX", "zip": "77441", "miles": 5.5}
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "checked": "2026-11-15",
+  "note": "Eligibility text is quoted from each library's own Books Unbanned page on the date above. Check the pages again before each data refresh.",
+  "programs": [
+    {
+      "library": "Brooklyn Public Library",
+      "url": "https://www.bklynlibrary.org/card/teens.php",
+      "eligibility": "Teens and young adults ages 13-21 outside of New York State can apply for a free Books Unbanned eCard."
+    },
+    {
+      "library": "The Seattle Public Library",
+      "url": "https://www.spl.org/programs-and-services/teens/books-unbanned",
+      "eligibility": "Anyone ages 13-26 living in the United States can get a card."
+    },
+    {
+      "library": "Boston Public Library",
+      "url": "https://www.bpl.org/books-unbanned/",
+      "eligibility": "Anyone ages 13-26 living in the United States can get a BPL Books Unbanned card."
+    },
+    {
+      "library": "LA County Library",
+      "url": "https://lacountylibrary.org/books-unbanned/",
+      "eligibility": "Anyone ages 13-18 living in the state of California can get a Books Unbanned card."
+    },
+    {
+      "library": "San Diego Public Library",
+      "url": "https://www.sandiego.gov/public-library/booksunbanned",
+      "eligibility": "Anyone ages 12-26 living in the United States can get an SDPL Books Unbanned card."
+    },
+    {
+      "library": "Long Beach Public Library",
+      "url": "https://www.longbeach.gov/library/borrow/books-unbanned/",
+      "eligibility": "Teens and young adults ages 13 to 19, living in the U.S. outside of Los Angeles County, can sign up."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "84101": {
+    "states": ["UT"],
+    "districts": [{"leaid": "4900002", "name": "Granite School District", "state": "UT"}],
+    "libraries": [
+      {"name": "Fixture City Library", "address": "210 E 400 S", "city": "Salt Lake City", "state": "UT", "zip": "84111", "miles": 0.6},
+      {"name": "Fixture Branch Library", "address": "15 W Main St", "city": "Salt Lake City", "state": "UT", "zip": "84101", "miles": 1.25},
+      {"name": "Fixture Annex", "address": "77 N State St", "city": "Salt Lake City", "state": "UT", "zip": "84103", "miles": 3}
+    ]
+  }
+}

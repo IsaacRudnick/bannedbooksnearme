@@ -1,0 +1,3 @@
+-r requirements.txt
+pytest==9.2.0
+playwright             # tools/check_site.py only. It uses the installed Microsoft Edge.

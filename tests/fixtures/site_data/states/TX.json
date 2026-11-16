@@ -1,0 +1,440 @@
+{
+ "state": "TX",
+ "name": "Texas",
+ "books": {
+  "OL8034526W": {
+   "title": "Call Me By Your Name",
+   "authors": [
+    "André Aciman"
+   ],
+   "ol": "OL8034526W",
+   "isbn": "9780374118044",
+   "cover": "tests/fixtures/site_data/covers/ok.svg",
+   "scan": true
+  },
+  "x3f2a9c01be": {
+   "title": "Some Title With No Cover",
+   "authors": [
+    "Doe, Jane"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "OL2000001W": {
+   "title": "Book With A Broken Cover",
+   "authors": [
+    "Eve Example"
+   ],
+   "ol": "OL2000001W",
+   "isbn": "9780000000028",
+   "cover": "tests/fixtures/site_data/covers/missing.jpg",
+   "scan": false
+  },
+  "x0000000001": {
+   "title": "Filler Book 01",
+   "authors": [
+    "Filler Author 01"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000002": {
+   "title": "Filler Book 02",
+   "authors": [
+    "Filler Author 02"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000003": {
+   "title": "Filler Book 03",
+   "authors": [
+    "Filler Author 03"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000004": {
+   "title": "Filler Book 04",
+   "authors": [
+    "Filler Author 04"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000005": {
+   "title": "Filler Book 05",
+   "authors": [
+    "Filler Author 05"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000006": {
+   "title": "Filler Book 06",
+   "authors": [
+    "Filler Author 06"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000007": {
+   "title": "Filler Book 07",
+   "authors": [
+    "Filler Author 07"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000008": {
+   "title": "Filler Book 08",
+   "authors": [
+    "Filler Author 08"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000009": {
+   "title": "Filler Book 09",
+   "authors": [
+    "Filler Author 09"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000010": {
+   "title": "Filler Book 10",
+   "authors": [
+    "Filler Author 10"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000011": {
+   "title": "Filler Book 11",
+   "authors": [
+    "Filler Author 11"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000012": {
+   "title": "Filler Book 12",
+   "authors": [
+    "Filler Author 12"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000013": {
+   "title": "Filler Book 13",
+   "authors": [
+    "Filler Author 13"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  },
+  "x0000000014": {
+   "title": "Filler Book 14",
+   "authors": [
+    "Filler Author 14"
+   ],
+   "ol": null,
+   "isbn": null,
+   "cover": null,
+   "scan": false
+  }
+ },
+ "districts": {
+  "4816230": {
+   "name": "Carrollton-Farmers Branch ISD",
+   "leaid": "4816230"
+  },
+  "4820730": {
+   "name": "Fort Bend ISD",
+   "leaid": "4820730"
+  },
+  "4823640": {
+   "name": "Katy ISD",
+   "leaid": "4823640"
+  },
+  "n:some district": {
+   "name": "Some District",
+   "leaid": null
+  }
+ },
+ "bans": [
+  {
+   "book": "OL8034526W",
+   "district": "4816230",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    },
+    {
+     "id": "magnusson",
+     "url": "https://example.org/magnusson/call-me"
+    }
+   ]
+  },
+  {
+   "book": "OL8034526W",
+   "district": "4816230",
+   "year": "2024-25",
+   "status": "restricted",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x3f2a9c01be",
+   "district": "4816230",
+   "year": "2023-24",
+   "status": "banned_pending_investigation",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "magnusson"
+    }
+   ]
+  },
+  {
+   "book": "OL2000001W",
+   "district": "4823640",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "OL8034526W",
+   "district": "4823640",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "OL2000001W",
+   "district": "4820730",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000001",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000002",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000003",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000004",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000005",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000006",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000007",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000008",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000009",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000010",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000011",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000012",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000013",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  },
+  {
+   "book": "x0000000014",
+   "district": "n:some district",
+   "year": "2023-24",
+   "status": "banned",
+   "scope": "district",
+   "sources": [
+    {
+     "id": "pen_2023-24"
+    }
+   ]
+  }
+ ]
+}

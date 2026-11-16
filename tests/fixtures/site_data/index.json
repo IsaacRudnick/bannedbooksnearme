@@ -1,0 +1,12 @@
+{
+  "generated": "2026-11-15",
+  "states": {
+    "TX": {"name": "Texas", "bans": 20, "books": 17, "statewide": 0},
+    "UT": {"name": "Utah", "bans": 3, "books": 3, "statewide": 2}
+  },
+  "sources": {
+    "pen_2023-24": {"name": "PEN America Index of School Book Bans, 2023-24", "url": "https://pen.org/report/beyond-the-shelves/"},
+    "magnusson": {"name": "Dr. Magnusson book ban list", "url": "https://example.org/magnusson"},
+    "utah_state": {"name": "Utah State Board of Education statewide list", "url": "https://example.org/utah-state-list"}
+  }
+}

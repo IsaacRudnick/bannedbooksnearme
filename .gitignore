@@ -1,4 +1,13 @@
-./combined_books.csv
-# Cached requests from python requests-cache
-*.sqlite 
 notes.md
+
+# Large raw downloads (see README "Raw inputs"). Never commit these.
+raw/
+# Intermediate pipeline output
+build/
+__pycache__/
+.pytest_cache/
+.venv/
+
+# The publishers own the source files, so git does not track them. Only the hand-written Books Unbanned list stays.
+sources/*
+!sources/books_unbanned.json
