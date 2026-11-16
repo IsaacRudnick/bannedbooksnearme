@@ -1,18 +1,19 @@
 var simplemaps_usmap_mapdata = {
 	main_settings: {
+		// State colors, border color, and label colors are set by app.js from CSS variables.
 		//General settings
 		width: "responsive", //or 'responsive'
 		background_color: "#FFFFFF",
-		background_transparent: "no",
+		background_transparent: "yes",
 		border_color: "#ffffff",
-		popups: "on_hover",
+		popups: "off", // app.js draws its own tooltip
 
 		//State defaults
 		state_description: "",
 		state_color: "#88A4BC",
 		state_hover_color: "#3B729F",
 		state_url: "",
-		border_size: 1.5,
+		border_size: 1.25,
 		all_states_inactive: "no",
 		all_states_zoomable: "no",
 
@@ -34,8 +35,8 @@ var simplemaps_usmap_mapdata = {
 		//Label defaults
 		label_color: "#d5ddec",
 		label_hover_color: "#d5ddec",
-		label_size: 22,
-		label_font: "Arial",
+		label_size: 18,
+		label_font: "Inter, system-ui, sans-serif",
 		hide_labels: "no",
 
 		//Zoom settings
@@ -62,7 +63,7 @@ var simplemaps_usmap_mapdata = {
 
 		//Advanced settings
 		div: "map",
-		auto_load: "yes",
+		auto_load: "no", // app.js calls simplemaps_usmap.load() after it sets the colors
 		url_new_tab: "no",
 		images_directory: "default",
 		fade_time: 0.1,
