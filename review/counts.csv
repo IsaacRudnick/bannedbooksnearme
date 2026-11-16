@@ -1,0 +1,123 @@
+section,name,ban_records,ban_events,value
+source,fldoe_2024-25,444,444,
+source,fldoe_2025-26,620,620,
+source,magnusson,12368,12267,
+source,pen_2023-24,10046,9982,
+source,pen_2024-25,6129,6100,
+source,pen_2024-25_state,40,40,
+source,utah_usbe,44,44,
+state,AK,114,108,
+state,AR,14,14,
+state,AZ,5,5,
+state,CA,5,3,
+state,CO,43,25,
+state,FL,12982,8854,
+state,GA,211,147,
+state,IA,6365,3864,
+state,ID,49,38,
+state,IL,9,8,
+state,IN,21,20,
+state,KS,10,9,
+state,KY,103,100,
+state,LA,2,1,
+state,MA,1,1,
+state,MD,128,78,
+state,ME,101,100,
+state,MI,33,33,
+state,MN,27,19,
+state,MO,224,187,
+state,MS,22,22,
+state,MT,10,10,
+state,NC,175,119,
+state,ND,14,14,
+state,NE,1,1,
+state,NH,2,2,
+state,NJ,11,10,
+state,NY,17,12,
+state,OH,9,7,
+state,OK,32,32,
+state,OR,45,42,
+state,PA,213,148,
+state,RI,1,1,
+state,SC,187,164,
+state,TN,3453,1892,
+state,TX,3136,2710,
+state,UT,470,383,
+state,VA,546,350,
+state,VT,1,1,
+state,WA,4,4,
+state,WI,807,429,
+state,WY,88,59,
+school_year,(none),155,139,
+school_year,2020-21,27,27,
+school_year,2021-22,657,656,
+school_year,2022-23,1245,1219,
+school_year,2023-24,17357,10628,
+school_year,2024-25,9203,6431,
+school_year,2025-26,1038,917,
+school_year,2026-27,9,9,
+loader,authors_filled,,,41
+loader,authors_still_missing,,,2
+loader,districts_none_removed,,,122
+loader,districts_with_removals,,,26
+loader,dropped_decision,,,7974
+loader,"dropped_decision_value:""Lost""",,,4
+loader,dropped_decision_value:(blank),,,1265
+loader,dropped_decision_value:02/12/2024,,,1
+loader,dropped_decision_value:N/A,,,134
+loader,dropped_decision_value:No Action,,,85
+loader,dropped_decision_value:Reshelved,,,1258
+loader,dropped_decision_value:Retained,,,1259
+loader,dropped_decision_value:Returned,,,732
+loader,dropped_decision_value:Still in Process,,,505
+loader,dropped_decision_value:The Absolutely True Diary of a Part-Time Indian,,,1
+loader,dropped_decision_value:Unclear,,,2
+loader,dropped_decision_value:Unknown,,,2465
+loader,dropped_decision_value:Weeded,,,3
+loader,dropped_decision_value:Weeded/Deselected,,,215
+loader,dropped_decision_value:Weeded/Deselectednned,,,44
+loader,dropped_decision_value:Withdrawn,,,1
+loader,dropped_empty_title,,,1
+loader,dropped_library_type:(blank),,,73
+loader,dropped_library_type:College/University,,,381
+loader,dropped_library_type:Public,,,1568
+loader,dropped_library_type:v,,,1
+loader,dropped_state:Nation,,,590
+loader,dropped_unknown_state:(blank),,,10
+loader,dropped_unknown_state:US,,,607
+loader,duplicates_in_source:magnusson,,,37
+loader,kept:banned,,,7390
+loader,kept:banned_pending_investigation,,,3298
+loader,kept:restricted,,,1718
+loader,kept_decision:Banned,,,7
+loader,kept_decision:Banned From Library,,,2
+loader,kept_decision:Banned/Do Not Order,,,56
+loader,kept_decision:Banned/Removed,,,7275
+loader,kept_decision:Banned/RemovedBanned/Removed,,,1
+loader,kept_decision:Challenged - Removed While Under Review,,,1
+loader,kept_decision:Removed,,,38
+loader,kept_decision:Removed - Curriculum,,,11
+loader,kept_decision:Retained Restricted,,,483
+loader,kept_decision:Retained/Restricted,,,1235
+loader,kept_decision:Still in Process,,,3295
+loader,kept_decision:Still in ProcessStill in Process,,,2
+loader,kept_statewide,,,30
+loader,records_loaded:fldoe_2024-25,,,444
+loader,records_loaded:fldoe_2025-26,,,620
+loader,records_loaded:magnusson,,,12406
+loader,records_loaded:pen_2023-24,,,10046
+loader,records_loaded:pen_2024-25,,,6129
+loader,records_loaded:pen_2024-25_state,,,40
+loader,records_loaded:utah_usbe,,,44
+loader,retained_with_restrictions_yes (not included),,,33
+summary,ban_records_after_dedupe,,,29691
+summary,ban_events,,,20026
+summary,records_merged_into_other_events,,,9665
+summary,book_keys_total,,,6918
+summary,book_keys_high_confidence,,,6187
+summary,book_match_rate_by_key,,,89.4%
+summary,book_match_rate_by_record,,,94.5%
+summary,district_names_total,,,480
+summary,district_names_matched,,,447
+summary,district_match_rate_by_name,,,93.1%
+summary,district_match_rate_by_record,,,99.2%
